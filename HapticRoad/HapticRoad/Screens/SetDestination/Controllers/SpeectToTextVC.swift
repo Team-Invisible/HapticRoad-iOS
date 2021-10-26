@@ -28,6 +28,13 @@ class SpeectToTextVC: UIViewController {
         super.viewDidLoad()
         speechRecognizer?.delegate = self
     }
+    
+    @IBAction func tapToNextVC(_ sender: UIButton) {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: TextToSpeechVC.identifier) as? TextToSpeechVC else { return }
+        print("sssss", sttTextView.text)
+        vc.destString = sttTextView.text
+        self.present(vc, animated: true, completion: nil)
+    }
 }
 
 extension SpeectToTextVC: SFSpeechRecognizerDelegate {

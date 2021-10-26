@@ -6,24 +6,38 @@
 //
 
 import UIKit
+import AVFoundation
 
 class TextToSpeechVC: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    static let identifier = "TextToSpeechVC"
+    var destString: String?
+    let synthesizer = AVSpeechSynthesizer()
+    
+    @IBOutlet var destLabel: UILabel! {
+        didSet {
+            if let dest = destString {
+                destLabel.text = dest
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
-    */
-
+    
+    @IBAction func tapToTextToSpeech(_ sender: UIButton) {
+        
+        do{
+            let _ = try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback,
+                                                                    options: .duckOthers)
+            try AVAudioSession.sharedInstance().setActive(true)
+            let utterance = AVSpeechUtterance(string: destLabel.text!)
+            utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
+            utterance.rate = 0.4
+            synthesizer.speak(utterance)
+        }catch{
+            print(error)
+        }
+    }
 }
