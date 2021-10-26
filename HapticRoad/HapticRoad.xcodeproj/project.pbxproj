@@ -21,6 +21,8 @@
 		33632064270064980062EFC4 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33632063270064980062EFC4 /* Font.swift */; };
 		336320662700649F0062EFC4 /* class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336320652700649F0062EFC4 /* class.swift */; };
 		33632068270064A60062EFC4 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33632067270064A60062EFC4 /* extension.swift */; };
+		33791F17272809750087892E /* TextToSpeechVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33791F16272809750087892E /* TextToSpeechVC.swift */; };
+		33791F19272809820087892E /* SpeectToTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33791F18272809820087892E /* SpeectToTextVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		33632063270064980062EFC4 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		336320652700649F0062EFC4 /* class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = class.swift; sourceTree = "<group>"; };
 		33632067270064A60062EFC4 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		33791F16272809750087892E /* TextToSpeechVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeechVC.swift; sourceTree = "<group>"; };
+		33791F18272809820087892E /* SpeectToTextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeectToTextVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				33632038270063020062EFC4 /* IsFirstRoadVC.swift */,
+				33791F16272809750087892E /* TextToSpeechVC.swift */,
+				33791F18272809820087892E /* SpeectToTextVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -295,8 +301,10 @@
 				33632039270063020062EFC4 /* IsFirstRoadVC.swift in Sources */,
 				3363205A2700643E0062EFC4 /* APIModel.swift in Sources */,
 				33632068270064A60062EFC4 /* extension.swift in Sources */,
+				33791F19272809820087892E /* SpeectToTextVC.swift in Sources */,
 				336320662700649F0062EFC4 /* class.swift in Sources */,
 				33632035270063020062EFC4 /* AppDelegate.swift in Sources */,
+				33791F17272809750087892E /* TextToSpeechVC.swift in Sources */,
 				33632064270064980062EFC4 /* Font.swift in Sources */,
 				33632037270063020062EFC4 /* SceneDelegate.swift in Sources */,
 				3363205C270064470062EFC4 /* APIService.swift in Sources */,
@@ -452,6 +460,8 @@
 				DEVELOPMENT_TEAM = 2ZS26WP93H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HapticRoad/Supports/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "햅틱로드가 마이크를 사용합니다.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "햅틱로드가 Speech를 사용합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = SetDestination;
@@ -480,6 +490,8 @@
 				DEVELOPMENT_TEAM = 2ZS26WP93H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HapticRoad/Supports/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "햅틱로드가 마이크를 사용합니다.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "햅틱로드가 Speech를 사용합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = SetDestination;
