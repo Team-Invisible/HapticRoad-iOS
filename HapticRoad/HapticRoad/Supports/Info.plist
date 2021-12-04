@@ -2,8 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NMFClientId</key>
-	<string>0qbvr84vzy</string>
+	<key>KAKAO_APP_KEY</key>
+	<string>09da6a2753cc64bbdff69a7904df9ecd</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

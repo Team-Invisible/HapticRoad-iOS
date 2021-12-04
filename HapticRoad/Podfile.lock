@@ -1,16 +1,30 @@
 PODS:
-  - NMapsMap (3.14.0)
+  - Alamofire (5.4.4)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - SnapKit (5.0.1)
+  - Then (2.7.0)
 
 DEPENDENCIES:
-  - NMapsMap
+  - Moya
+  - SnapKit
+  - Then
 
 SPEC REPOS:
   trunk:
-    - NMapsMap
+    - Alamofire
+    - Moya
+    - SnapKit
+    - Then
 
 SPEC CHECKSUMS:
-  NMapsMap: 61c2abfc409bbcdc91583ccc455a5b6f64c7414e
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: 5c52849983e5224c91b620b346e6b11e973511b0
+PODFILE CHECKSUM: 77d9c1b500383689cea86f55e5668154d74cb537
 
 COCOAPODS: 1.11.2

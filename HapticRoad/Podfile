@@ -6,5 +6,7 @@ target 'HapticRoad' do
   use_frameworks!
 
   # Pods for HapticRoad
-  pod 'NMapsMap'
+  pod 'SnapKit'
+  pod 'Then'
+  pod 'Moya'
 end
