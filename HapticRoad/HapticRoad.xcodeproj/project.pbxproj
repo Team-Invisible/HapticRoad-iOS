@@ -23,6 +23,7 @@
 		33632068270064A60062EFC4 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33632067270064A60062EFC4 /* extension.swift */; };
 		33791F17272809750087892E /* TextToSpeechVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33791F16272809750087892E /* TextToSpeechVC.swift */; };
 		33791F19272809820087892E /* SpeectToTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33791F18272809820087892E /* SpeectToTextVC.swift */; };
+		CB075C34CB3F0EF29F761F10 /* Pods_HapticRoad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D6EB6800B2BB5B1CA2FBCE /* Pods_HapticRoad.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,9 @@
 		33632067270064A60062EFC4 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		33791F16272809750087892E /* TextToSpeechVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeechVC.swift; sourceTree = "<group>"; };
 		33791F18272809820087892E /* SpeectToTextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeectToTextVC.swift; sourceTree = "<group>"; };
+		653E533C555EF5AA6E1A0C4E /* Pods-HapticRoad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HapticRoad.release.xcconfig"; path = "Target Support Files/Pods-HapticRoad/Pods-HapticRoad.release.xcconfig"; sourceTree = "<group>"; };
+		83D6EB6800B2BB5B1CA2FBCE /* Pods_HapticRoad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HapticRoad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC6BE9DFE110AD9F19C612B1 /* Pods-HapticRoad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HapticRoad.debug.xcconfig"; path = "Target Support Files/Pods-HapticRoad/Pods-HapticRoad.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB075C34CB3F0EF29F761F10 /* Pods_HapticRoad.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +67,8 @@
 			children = (
 				33632033270063020062EFC4 /* HapticRoad */,
 				33632032270063020062EFC4 /* Products */,
+				A329B4CA1290A2BD32B60890 /* Pods */,
+				6E4ED8EAAE3CE5E358C68820 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -225,6 +232,23 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		6E4ED8EAAE3CE5E358C68820 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83D6EB6800B2BB5B1CA2FBCE /* Pods_HapticRoad.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A329B4CA1290A2BD32B60890 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC6BE9DFE110AD9F19C612B1 /* Pods-HapticRoad.debug.xcconfig */,
+				653E533C555EF5AA6E1A0C4E /* Pods-HapticRoad.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -232,9 +256,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33632045270063050062EFC4 /* Build configuration list for PBXNativeTarget "HapticRoad" */;
 			buildPhases = (
+				980121AF140B1071464A399C /* [CP] Check Pods Manifest.lock */,
 				3363202D270063020062EFC4 /* Sources */,
 				3363202E270063020062EFC4 /* Frameworks */,
 				3363202F270063020062EFC4 /* Resources */,
+				0B67C9B58C5A11A789F51509 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -291,6 +317,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B67C9B58C5A11A789F51509 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HapticRoad/Pods-HapticRoad-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HapticRoad/Pods-HapticRoad-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HapticRoad/Pods-HapticRoad-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		980121AF140B1071464A399C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HapticRoad-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3363202D270063020062EFC4 /* Sources */ = {
@@ -452,6 +520,7 @@
 		};
 		33632046270063050062EFC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC6BE9DFE110AD9F19C612B1 /* Pods-HapticRoad.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -472,7 +541,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swift.invisible.HapticRoad;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swift.invisible;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -482,6 +551,7 @@
 		};
 		33632047270063050062EFC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 653E533C555EF5AA6E1A0C4E /* Pods-HapticRoad.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -502,7 +572,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swift.invisible.HapticRoad;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swift.invisible;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
