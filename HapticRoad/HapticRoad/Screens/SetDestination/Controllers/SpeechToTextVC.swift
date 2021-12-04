@@ -1,5 +1,5 @@
 //
-//  SpeectToTextVC.swift
+//  SpeechToTextVC.swift
 //  HapticRoad
 //
 //  Created by 황지은 on 2021/10/26.
@@ -8,7 +8,7 @@
 import UIKit
 import Speech
 
-class SpeectToTextVC: UIViewController {
+class SpeechToTextVC: UIViewController {
 
     //Mark: - Properties
     //한국어 인식
@@ -37,7 +37,7 @@ class SpeectToTextVC: UIViewController {
     }
 }
 
-extension SpeectToTextVC: SFSpeechRecognizerDelegate {
+extension SpeechToTextVC: SFSpeechRecognizerDelegate {
     
     
     @IBAction func tapToSpeechToText(_ sender: Any) {

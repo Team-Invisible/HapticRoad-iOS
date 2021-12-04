@@ -35,6 +35,7 @@
 		332BF372275B70AC00B5DA3C /* daum_th_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 332BF356275B70AC00B5DA3C /* daum_th_line.png */; };
 		332BF373275B70AC00B5DA3C /* map_pin_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 332BF357275B70AC00B5DA3C /* map_pin_shadow.png */; };
 		332BF374275B70AC00B5DA3C /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 332BF358275B70AC00B5DA3C /* DaumMap.framework */; };
+		332BF331275B6C4300B5DA3C /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332BF330275B6C4300B5DA3C /* Identifiers.swift */; };
 		33632035270063020062EFC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33632034270063020062EFC4 /* AppDelegate.swift */; };
 		33632037270063020062EFC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33632036270063020062EFC4 /* SceneDelegate.swift */; };
 		33632039270063020062EFC4 /* IsFirstRoadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33632038270063020062EFC4 /* IsFirstRoadVC.swift */; };
@@ -50,7 +51,7 @@
 		336320662700649F0062EFC4 /* class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336320652700649F0062EFC4 /* class.swift */; };
 		33632068270064A60062EFC4 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33632067270064A60062EFC4 /* extension.swift */; };
 		33791F17272809750087892E /* TextToSpeechVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33791F16272809750087892E /* TextToSpeechVC.swift */; };
-		33791F19272809820087892E /* SpeectToTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33791F18272809820087892E /* SpeectToTextVC.swift */; };
+		33791F19272809820087892E /* SpeechToTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33791F18272809820087892E /* SpeechToTextVC.swift */; };
 		CB075C34CB3F0EF29F761F10 /* Pods_HapticRoad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D6EB6800B2BB5B1CA2FBCE /* Pods_HapticRoad.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,7 +109,7 @@
 		336320652700649F0062EFC4 /* class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = class.swift; sourceTree = "<group>"; };
 		33632067270064A60062EFC4 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		33791F16272809750087892E /* TextToSpeechVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeechVC.swift; sourceTree = "<group>"; };
-		33791F18272809820087892E /* SpeectToTextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeectToTextVC.swift; sourceTree = "<group>"; };
+		33791F18272809820087892E /* SpeechToTextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechToTextVC.swift; sourceTree = "<group>"; };
 		653E533C555EF5AA6E1A0C4E /* Pods-HapticRoad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HapticRoad.release.xcconfig"; path = "Target Support Files/Pods-HapticRoad/Pods-HapticRoad.release.xcconfig"; sourceTree = "<group>"; };
 		83D6EB6800B2BB5B1CA2FBCE /* Pods_HapticRoad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HapticRoad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC6BE9DFE110AD9F19C612B1 /* Pods-HapticRoad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HapticRoad.debug.xcconfig"; path = "Target Support Files/Pods-HapticRoad/Pods-HapticRoad.debug.xcconfig"; sourceTree = "<group>"; };
@@ -304,7 +305,7 @@
 			children = (
 				33632038270063020062EFC4 /* IsFirstRoadVC.swift */,
 				33791F16272809750087892E /* TextToSpeechVC.swift */,
-				33791F18272809820087892E /* SpeectToTextVC.swift */,
+				33791F18272809820087892E /* SpeechToTextVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -329,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				33632067270064A60062EFC4 /* extension.swift */,
+				332BF330275B6C4300B5DA3C /* Identifiers.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -521,11 +523,12 @@
 				33632039270063020062EFC4 /* IsFirstRoadVC.swift in Sources */,
 				3363205A2700643E0062EFC4 /* APIModel.swift in Sources */,
 				33632068270064A60062EFC4 /* extension.swift in Sources */,
-				33791F19272809820087892E /* SpeectToTextVC.swift in Sources */,
+				33791F19272809820087892E /* SpeechToTextVC.swift in Sources */,
 				336320662700649F0062EFC4 /* class.swift in Sources */,
 				33632035270063020062EFC4 /* AppDelegate.swift in Sources */,
 				33791F17272809750087892E /* TextToSpeechVC.swift in Sources */,
 				33632064270064980062EFC4 /* Font.swift in Sources */,
+				332BF331275B6C4300B5DA3C /* Identifiers.swift in Sources */,
 				33632037270063020062EFC4 /* SceneDelegate.swift in Sources */,
 				3363205C270064470062EFC4 /* APIService.swift in Sources */,
 				336320562700641C0062EFC4 /* WayFindingVC.swift in Sources */,
