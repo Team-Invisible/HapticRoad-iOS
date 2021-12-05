@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		332BF331275B6C4300B5DA3C /* (null) in Sources */ = {isa = PBXBuildFile; };
+		332BF378275BA92C00B5DA3C /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332BF377275BA92C00B5DA3C /* GenericResponse.swift */; };
+		332BF37A275BA95E00B5DA3C /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332BF379275BA95E00B5DA3C /* APIConstants.swift */; };
+		332BF37C275BA96700B5DA3C /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332BF37B275BA96700B5DA3C /* NetworkResult.swift */; };
+		332BF37E275BA9A800B5DA3C /* TMapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332BF37D275BA9A800B5DA3C /* TMapService.swift */; };
+		332BF380275BA9B200B5DA3C /* TMapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332BF37F275BA9B200B5DA3C /* TMapAPI.swift */; };
+		332BF382275C667200B5DA3C /* PedestrianData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332BF381275C667200B5DA3C /* PedestrianData.swift */; };
 		33632035270063020062EFC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33632034270063020062EFC4 /* AppDelegate.swift */; };
 		33632037270063020062EFC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33632036270063020062EFC4 /* SceneDelegate.swift */; };
 		33632039270063020062EFC4 /* IsFirstRoadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33632038270063020062EFC4 /* IsFirstRoadVC.swift */; };
@@ -16,8 +22,6 @@
 		33632041270063050062EFC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3363203F270063050062EFC4 /* LaunchScreen.storyboard */; };
 		33632054270064110062EFC4 /* WayFinding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33632053270064110062EFC4 /* WayFinding.storyboard */; };
 		336320562700641C0062EFC4 /* WayFindingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336320552700641C0062EFC4 /* WayFindingVC.swift */; };
-		3363205A2700643E0062EFC4 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336320592700643E0062EFC4 /* APIModel.swift */; };
-		3363205C270064470062EFC4 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363205B270064470062EFC4 /* APIService.swift */; };
 		33632062270064920062EFC4 /* AppModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33632061270064920062EFC4 /* AppModels.swift */; };
 		33632064270064980062EFC4 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33632063270064980062EFC4 /* Font.swift */; };
 		336320662700649F0062EFC4 /* class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336320652700649F0062EFC4 /* class.swift */; };
@@ -28,6 +32,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		332BF377275BA92C00B5DA3C /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
+		332BF379275BA95E00B5DA3C /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		332BF37B275BA96700B5DA3C /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		332BF37D275BA9A800B5DA3C /* TMapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMapService.swift; sourceTree = "<group>"; };
+		332BF37F275BA9B200B5DA3C /* TMapAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMapAPI.swift; sourceTree = "<group>"; };
+		332BF381275C667200B5DA3C /* PedestrianData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedestrianData.swift; sourceTree = "<group>"; };
 		33632031270063020062EFC4 /* HapticRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HapticRoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33632034270063020062EFC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33632036270063020062EFC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,8 +48,6 @@
 		33632042270063050062EFC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33632053270064110062EFC4 /* WayFinding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WayFinding.storyboard; sourceTree = "<group>"; };
 		336320552700641C0062EFC4 /* WayFindingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayFindingVC.swift; sourceTree = "<group>"; };
-		336320592700643E0062EFC4 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
-		3363205B270064470062EFC4 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		33632061270064920062EFC4 /* AppModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModels.swift; sourceTree = "<group>"; };
 		33632063270064980062EFC4 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		336320652700649F0062EFC4 /* class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = class.swift; sourceTree = "<group>"; };
@@ -63,6 +71,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		332BF376275BA91B00B5DA3C /* APIEssentials */ = {
+			isa = PBXGroup;
+			children = (
+				332BF379275BA95E00B5DA3C /* APIConstants.swift */,
+				332BF37B275BA96700B5DA3C /* NetworkResult.swift */,
+			);
+			path = APIEssentials;
+			sourceTree = "<group>";
+		};
 		33632028270063020062EFC4 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +144,7 @@
 		3363204B2700637E0062EFC4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				332BF376275BA91B00B5DA3C /* APIEssentials */,
 				33632057270064280062EFC4 /* APIModels */,
 				33632058270064300062EFC4 /* APIServices */,
 			);
@@ -188,7 +206,8 @@
 		33632057270064280062EFC4 /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
-				336320592700643E0062EFC4 /* APIModel.swift */,
+				332BF377275BA92C00B5DA3C /* GenericResponse.swift */,
+				332BF381275C667200B5DA3C /* PedestrianData.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -196,7 +215,8 @@
 		33632058270064300062EFC4 /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
-				3363205B270064470062EFC4 /* APIService.swift */,
+				332BF37D275BA9A800B5DA3C /* TMapService.swift */,
+				332BF37F275BA9B200B5DA3C /* TMapAPI.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -368,17 +388,21 @@
 			files = (
 				33632062270064920062EFC4 /* AppModels.swift in Sources */,
 				33632039270063020062EFC4 /* IsFirstRoadVC.swift in Sources */,
-				3363205A2700643E0062EFC4 /* APIModel.swift in Sources */,
 				33632068270064A60062EFC4 /* extension.swift in Sources */,
 				33791F19272809820087892E /* SpeechToTextVC.swift in Sources */,
 				336320662700649F0062EFC4 /* class.swift in Sources */,
+				332BF378275BA92C00B5DA3C /* GenericResponse.swift in Sources */,
+				332BF37C275BA96700B5DA3C /* NetworkResult.swift in Sources */,
 				33632035270063020062EFC4 /* AppDelegate.swift in Sources */,
 				33791F17272809750087892E /* TextToSpeechVC.swift in Sources */,
 				33632064270064980062EFC4 /* Font.swift in Sources */,
 				332BF331275B6C4300B5DA3C /* (null) in Sources */,
+				332BF37A275BA95E00B5DA3C /* APIConstants.swift in Sources */,
 				33632037270063020062EFC4 /* SceneDelegate.swift in Sources */,
-				3363205C270064470062EFC4 /* APIService.swift in Sources */,
+				332BF382275C667200B5DA3C /* PedestrianData.swift in Sources */,
 				336320562700641C0062EFC4 /* WayFindingVC.swift in Sources */,
+				332BF380275BA9B200B5DA3C /* TMapAPI.swift in Sources */,
+				332BF37E275BA9A800B5DA3C /* TMapService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,14 +556,16 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HapticRoad/Supports/DaumMap.embeddedframework",
+					"$(PROJECT_DIR)/HapticRoad/Supports",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HapticRoad/Supports/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "햅틱로드가 마이크를 사용합니다.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "햅틱로드가 Speech를 사용합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = SetDestination;
+				INFOPLIST_KEY_UIMainStoryboardFile = WayFinding;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -567,14 +593,16 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HapticRoad/Supports/DaumMap.embeddedframework",
+					"$(PROJECT_DIR)/HapticRoad/Supports",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HapticRoad/Supports/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "햅틱로드가 마이크를 사용합니다.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "햅틱로드가 Speech를 사용합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = SetDestination;
+				INFOPLIST_KEY_UIMainStoryboardFile = WayFinding;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
