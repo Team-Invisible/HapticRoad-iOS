@@ -24,7 +24,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>WayFinding</string>
+					<string>SetDestination</string>
 				</dict>
 			</array>
 		</dict>
