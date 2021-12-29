@@ -7,21 +7,26 @@
 
 import UIKit
 extension UIFont {
-    // MARK: AppleSDGothic Font
-    class func AppleSDGothicB(size: CGFloat) -> UIFont {
-        return UIFont(name: "AppleSDGothicNeoB00", size: size)!
+    // MARK: Pretendard Font
+    
+    class func PretendardL(size: CGFloat) -> UIFont {
+        return UIFont(name: "Pretendard-Light", size: size)!
     }
     
-    class func AppleSDGothicM(size: CGFloat) -> UIFont {
-        return UIFont(name: "AppleSDGothicNeoM00", size: size)!
+    class func PretendardR(size: CGFloat) -> UIFont {
+        return UIFont(name: "Pretendard-Regular", size: size)!
     }
     
-    class func AppleSDGothicR(size: CGFloat) -> UIFont {
-        return UIFont(name: "AppleSDGothicNeoR00", size: size)!
+    class func PretendardM(size: CGFloat) -> UIFont {
+        return UIFont(name: "Pretendard-Medium", size: size)!
     }
     
-    class func AppleSDGothicSB(size: CGFloat) -> UIFont {
-        return UIFont(name: "AppleSDGothicNeoSB00", size: size)!
+    class func PretendardB(size: CGFloat) -> UIFont {
+        return UIFont(name: "Pretendard-Bold", size: size)!
+    }
+    
+    class func PretendardSB(size: CGFloat) -> UIFont {
+        return UIFont(name: "Pretendard-SemiBold", size: size)!
     }
 }
 
