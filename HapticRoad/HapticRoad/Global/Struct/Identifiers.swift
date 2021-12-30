@@ -15,11 +15,13 @@ struct Identifiers {
     //MARK: - Controller
     //setDestination
     static let startSetDestinationVC = "StartSetDestinationVC"
+    static let speechToTextVC = "SpeechToTextVC"
     
     //wayFinding
     static let wayFindingVC = "WayFindingVC"
  
     //MARK: - Cell
+    static let adressTVC = "AdressTVC"
     
     //MARK: - View
 }
