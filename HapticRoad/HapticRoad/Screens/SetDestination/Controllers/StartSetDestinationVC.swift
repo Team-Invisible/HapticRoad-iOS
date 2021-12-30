@@ -15,7 +15,9 @@ class StartSetDestinationVC: UIViewController {
     
     //MARK: - IBAction
     @IBAction func startWayFindingBtnDidTap(_ sender: UIButton) {
-        print("start")
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: Identifiers.speechToTextVC) as? SpeechToTextVC else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     @IBAction func stopWayFindingBtnDidTap(_ sender: UIButton) {
