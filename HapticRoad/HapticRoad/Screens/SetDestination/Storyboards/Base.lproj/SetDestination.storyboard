@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JVV-LJ-rQf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UWI-zh-NQ3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRJ-al-xac">
-                                <rect key="frame" x="36" y="91" width="226" height="53"/>
+                                <rect key="frame" x="36" y="135" width="226" height="9"/>
                                 <string key="text">안녕하세요.
 길찾기를 시작하시겠어요?</string>
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="22"/>
@@ -142,15 +142,72 @@
                             <constraint firstItem="5rD-Rp-Ip9" firstAttribute="leading" secondItem="zkY-Zm-yTF" secondAttribute="leading" id="p74-pN-W3t"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Igv-be-4D7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8J7-7i-dmB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-655.07246376811599" y="116.51785714285714"/>
+            <point key="canvasLocation" x="255.07246376811597" y="116.51785714285714"/>
         </scene>
         <!--Speech To TextVC-->
+        <scene sceneID="Q1u-mi-FCh">
+            <objects>
+                <viewController storyboardIdentifier="SpeechToTextVC" id="rlO-fy-Gj2" customClass="SpeechToTextVC" customModule="HapticRoad" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7uQ-sJ-GSw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가고 싶은 곳을 말해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m25-5h-qkQ">
+                                <rect key="frame" x="125" y="80" width="164" height="20"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="16"/>
+                                <color key="textColor" name="mainBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyS-qP-jYU">
+                                <rect key="frame" x="201" y="120" width="12" height="32"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="26"/>
+                                <color key="textColor" name="darkGray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flp-iq-4J5">
+                                <rect key="frame" x="0.0" y="246" width="414" height="480"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="480" id="j3V-Ho-Heu"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="listeningRecognize" imageContentMode="scaleAspectFill"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="sttBtnDidTap:" destination="rlO-fy-Gj2" eventType="touchUpInside" id="UJI-Nc-aKb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2cm-0g-Krv"/>
+                        <color key="backgroundColor" name="oatmealWhite"/>
+                        <constraints>
+                            <constraint firstItem="flp-iq-4J5" firstAttribute="trailing" secondItem="2cm-0g-Krv" secondAttribute="trailing" id="2yj-eU-cjO"/>
+                            <constraint firstItem="CyS-qP-jYU" firstAttribute="top" secondItem="m25-5h-qkQ" secondAttribute="bottom" constant="20" id="GrQ-en-PcX"/>
+                            <constraint firstItem="flp-iq-4J5" firstAttribute="leading" secondItem="2cm-0g-Krv" secondAttribute="leading" id="NRk-ua-Nx8"/>
+                            <constraint firstItem="CyS-qP-jYU" firstAttribute="centerX" secondItem="2cm-0g-Krv" secondAttribute="centerX" id="cuu-uL-4c7"/>
+                            <constraint firstItem="m25-5h-qkQ" firstAttribute="centerX" secondItem="2cm-0g-Krv" secondAttribute="centerX" id="nYS-M8-UWu"/>
+                            <constraint firstItem="m25-5h-qkQ" firstAttribute="top" secondItem="2cm-0g-Krv" secondAttribute="top" constant="36" id="oPH-7u-WFw"/>
+                            <constraint firstItem="flp-iq-4J5" firstAttribute="top" secondItem="CyS-qP-jYU" secondAttribute="bottom" constant="94" id="wJg-6f-MTB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="guideLabel" destination="m25-5h-qkQ" id="YUY-S2-Qf0"/>
+                        <outlet property="speechBtn" destination="flp-iq-4J5" id="tWo-bm-WTZ"/>
+                        <outlet property="sttTextLabel" destination="CyS-qP-jYU" id="lvE-G2-xuu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Cm-m5-QGZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1033.3333333333335" y="124.55357142857142"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="SpeechToTextVC" id="BYZ-38-t0r" customClass="SpeechToTextVC" customModule="HapticRoad" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -210,7 +267,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="117"/>
+            <point key="canvasLocation" x="3745" y="-134"/>
         </scene>
         <!--Text To SpeechVC-->
         <scene sceneID="nNb-DT-Icc">
@@ -220,46 +277,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26U-Ox-1Gj">
-                                <rect key="frame" x="157" y="248" width="101" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="음성변환 듣기"/>
-                                <connections>
-                                    <action selector="tapToTextToSpeech:" destination="3s5-PT-IYq" eventType="touchUpInside" id="PjL-yK-J9c"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBD-bd-y17">
-                                <rect key="frame" x="20" y="144" width="374" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="qtL-n1-Y2T"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="36" y="80" width="358" height="26.5"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="22"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IhF-94-UW2">
+                                <rect key="frame" x="22" y="170.5" width="370" height="691.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IIZ-W5-GhG"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="mainBlue"/>
                         <constraints>
-                            <constraint firstItem="XBD-bd-y17" firstAttribute="top" secondItem="IIZ-W5-GhG" secondAttribute="top" constant="100" id="JPp-7H-WQa"/>
+                            <constraint firstItem="IhF-94-UW2" firstAttribute="top" secondItem="XBD-bd-y17" secondAttribute="bottom" constant="64" id="4gR-1b-cbm"/>
+                            <constraint firstItem="IIZ-W5-GhG" firstAttribute="bottom" secondItem="IhF-94-UW2" secondAttribute="bottom" id="8y0-dx-QLj"/>
+                            <constraint firstItem="XBD-bd-y17" firstAttribute="top" secondItem="IIZ-W5-GhG" secondAttribute="top" constant="36" id="JPp-7H-WQa"/>
+                            <constraint firstItem="IhF-94-UW2" firstAttribute="leading" secondItem="IIZ-W5-GhG" secondAttribute="leading" constant="22" id="Leg-Pz-Yti"/>
                             <constraint firstItem="IIZ-W5-GhG" firstAttribute="trailing" secondItem="XBD-bd-y17" secondAttribute="trailing" constant="20" id="YgX-q6-3GX"/>
-                            <constraint firstItem="XBD-bd-y17" firstAttribute="leading" secondItem="IIZ-W5-GhG" secondAttribute="leading" constant="20" id="vqU-j8-ta4"/>
+                            <constraint firstItem="IIZ-W5-GhG" firstAttribute="trailing" secondItem="IhF-94-UW2" secondAttribute="trailing" constant="22" id="Yo6-V9-aHR"/>
+                            <constraint firstItem="XBD-bd-y17" firstAttribute="leading" secondItem="IIZ-W5-GhG" secondAttribute="leading" constant="36" id="vqU-j8-ta4"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="destLabel" destination="XBD-bd-y17" id="8qk-cw-n01"/>
+                        <outlet property="searchedAddressTV" destination="IhF-94-UW2" id="eLl-AY-5gm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZPw-7M-1yj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="929" y="117"/>
+            <point key="canvasLocation" x="1878" y="125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Si6-1T-I1b">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UWI-zh-NQ3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pa3-U4-TW7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JVV-LJ-rQf" kind="relationship" relationship="rootViewController" id="NSd-Fo-mX8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0xe-1Z-S6d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-655.07246376811599" y="116.51785714285714"/>
         </scene>
     </scenes>
     <resources>
         <image name="gradientBackground" width="375" height="624"/>
+        <image name="listeningRecognize" width="375" height="478"/>
+        <namedColor name="darkGray">
+            <color red="0.33725490196078434" green="0.33725490196078434" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="mainBlue">
             <color red="0.30980392156862746" green="0.41568627450980394" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="oatmealWhite">
+            <color red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
