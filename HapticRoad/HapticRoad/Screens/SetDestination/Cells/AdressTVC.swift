@@ -9,15 +9,35 @@ import UIKit
 
 class AdressTVC: UITableViewCell {
 
+    @IBOutlet var destinationTitleLabel: UILabel! {
+        didSet {
+            destinationTitleLabel.sizeToFit()
+        }
+    }
+    @IBOutlet var addressLabel: UILabel! {
+        didSet {
+            addressLabel.sizeToFit()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setupLayout()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
+    func setAppData(appData: AddressData) {
+        destinationTitleLabel.text = appData.searchedTitle
+        addressLabel.text = appData.searchedAddress
+    }
+    
+    func setupLayout() {
+        contentView.layer.cornerRadius = 12
+        contentView.layer.masksToBounds = true
+    }
 }
