@@ -10,7 +10,7 @@ import Speech
 
 class SpeechToTextVC: UIViewController {
 
-    //Mark: - Properties
+    //MARK: Properties
     //한국어 인식
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ko-KR"))
     //음성인식요청 처리 객체
@@ -20,37 +20,37 @@ class SpeechToTextVC: UIViewController {
     //순수 소리만을 인식하는 오디오 엔진 객체
     private let audioEngine = AVAudioEngine()
     var sttText: String = ""
+    var timer: Timer?
     
+    @IBOutlet var guideLabel: UILabel!
+    @IBOutlet var sttTextLabel: UILabel!
     @IBOutlet var speechBtn: UIButton!
-    @IBOutlet var sttTextView: UITextView!
     
+    //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         speechRecognizer?.delegate = self
+        navigationController?.navigationBar.isHidden = true
     }
     
-    @IBAction func tapToNextVC(_ sender: UIButton) {
+    //MARK: Custom Method
+    func pushToNextVC() {
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: TextToSpeechVC.identifier) as? TextToSpeechVC else { return }
-        print("sssss", sttTextView.text)
-        vc.destString = sttTextView.text
-        self.present(vc, animated: true, completion: nil)
+        vc.destString = sttText
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
-
+//MARK: - SFSpeechRecognizerDelegate
 extension SpeechToTextVC: SFSpeechRecognizerDelegate {
     
-    
-    @IBAction func tapToSpeechToText(_ sender: Any) {
+    @IBAction func sttBtnDidTap(_ sender: UIButton) {
         if audioEngine.isRunning {
             //현재 음성인식이 수행중이라면
             audioEngine.stop() //오디오 입력 중단
             recognitionRequest?.endAudio() //음성인식도 중단
-            speechBtn.isEnabled = false
-            speechBtn.setTitle("목적지 말하기", for: .normal)
         }
         else {
             startRecoding()
-            speechBtn.setTitle("말하기 중단", for: .normal)
         }
     }
     
@@ -58,7 +58,6 @@ extension SpeechToTextVC: SFSpeechRecognizerDelegate {
         //인식 작업이 실행 중인지 확인. 이 경우 작업과 인식을 취소
         //현재 음성인식을 처리하고 있으면 그 작업을 중지하고 새로운 음성인식처리를 하라는 부분
         //지금 음성인식을 시작했는데, 다른 음성인식을 처리하고있으면 현재 음성을 처리못하므로!
-        
         
         if recognitionTask != nil {
             recognitionTask?.cancel()
@@ -89,21 +88,24 @@ extension SpeechToTextVC: SFSpeechRecognizerDelegate {
             var isFinal = false
             
             if result != nil {
-                
-                self.sttTextView.text = result?.bestTranscription.formattedString
-                sttText = result?.bestTranscription.formattedString ?? "Default"
+                self.guideLabel.text = "듣고 있어요"
+                self.speechBtn.configuration?.background.image = UIImage(named: "hearingMotion")
+                self.sttTextLabel.text = result?.bestTranscription.formattedString
+                self.sttText = result?.bestTranscription.formattedString ?? "Default"
                 print(sttText)
                 isFinal = (result?.isFinal)!
+                print(isFinal)
             }
             
             if error != nil || isFinal {
                 self.audioEngine.stop()
+                
                 inputNode.removeTap(onBus: 0)
                 
                 self.recognitionRequest = nil
                 self.recognitionTask = nil
-                
-                self.speechBtn.isEnabled = true
+                // 사용자의 음성이 멈추면 nextVC로 이동하도록 추후에 로직 변경하기.
+                pushToNextVC()
             }
         })
         
@@ -120,8 +122,6 @@ extension SpeechToTextVC: SFSpeechRecognizerDelegate {
         catch {
             print("audioEngine couldn't start because of an error.")
         }
-        
-        sttTextView.text = "계속 말하세요! 듣고 있어요"
     }
     
     func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
