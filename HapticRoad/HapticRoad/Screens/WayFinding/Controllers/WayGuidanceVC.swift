@@ -69,6 +69,7 @@ class WayGuidanceVC: UIViewController {
         setCoordinate()
         hapticInitialSetting()
         getPedestrianData(startX: Location.shared.longitude ?? -1, startY: Location.shared.latitude ?? -1, endX: endX ?? -1, endY: endY ?? -1, startName: "*", endName: endName ?? "")
+        makeCrossWalkHaptic()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -126,6 +127,7 @@ extension WayGuidanceVC {
             //3 비교 후 오차 범위 안에 진입했다면 인덱스 +1 & 다음 경로안내로 changing
             
             // 1m 보다 거리 차이가 나면
+            print(distance)
             if distance > 1 {
                 print("1m 보다 거리 차이가 나")
             }
@@ -158,22 +160,27 @@ extension WayGuidanceVC {
             makeStraightHaptic()
             guidanceDirection = .straight
             guidanceImageView.image = UIImage(named: "forward")
+            print("forward")
         case 12:
             makeLeftHaptic()
             guidanceDirection = .left
             guidanceImageView.image = UIImage(named: "leftSide")
+            print("leftSide")
         case 13:
             makeRightHaptic()
             guidanceDirection = .right
             guidanceImageView.image = UIImage(named: "rightSide")
+            print("rightSide")
         case 211,212,213:
             makeCrossWalkHaptic()
             guidanceDirection = .crossWalk
             guidanceImageView.image = UIImage(named: "crosswalk")
+            print("crosswalk")
         default:
             makeStraightHaptic()
             guidanceDirection = .straight
             guidanceImageView.image = UIImage(named: "forward")
+            print("forward")
         }
     }
 }

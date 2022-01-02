@@ -85,7 +85,7 @@ class AddressConfirmVC: UIViewController {
     }
     
     @IBAction func destinationNoBtnDidTap(_ sender: UIButton) {
-        
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

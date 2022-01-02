@@ -50,6 +50,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldF-Dv-lyV">
                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="716"/>
+                                                <accessibility key="accessibilityConfiguration" label="예"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
@@ -85,6 +86,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovA-ri-hF7">
                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="716"/>
+                                                <accessibility key="accessibilityConfiguration" label="아니오"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
@@ -293,11 +295,32 @@
                                 <rect key="frame" x="22" y="170" width="370" height="692"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sdj-pf-QWc">
+                                <rect key="frame" x="36" y="131" width="342" height="31"/>
+                                <color key="backgroundColor" name="darkGray"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="돌아가기">
+                                            <attributes>
+                                                <font key="NSFont" size="14" name="Pretendard-SemiBold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="popBtnDidTap:" destination="3s5-PT-IYq" eventType="touchUpInside" id="dIh-Pf-pDy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IIZ-W5-GhG"/>
                         <color key="backgroundColor" name="mainBlue"/>
                         <constraints>
+                            <constraint firstItem="Sdj-pf-QWc" firstAttribute="leading" secondItem="XBD-bd-y17" secondAttribute="leading" id="0KB-ue-Vx2"/>
                             <constraint firstItem="IhF-94-UW2" firstAttribute="top" secondItem="XBD-bd-y17" secondAttribute="bottom" constant="64" id="4gR-1b-cbm"/>
+                            <constraint firstItem="IIZ-W5-GhG" firstAttribute="trailing" secondItem="Sdj-pf-QWc" secondAttribute="trailing" constant="36" id="6Dh-zG-Pcq"/>
+                            <constraint firstItem="Sdj-pf-QWc" firstAttribute="top" secondItem="XBD-bd-y17" secondAttribute="bottom" constant="25" id="8np-Jq-tqf"/>
                             <constraint firstItem="IIZ-W5-GhG" firstAttribute="bottom" secondItem="IhF-94-UW2" secondAttribute="bottom" id="8y0-dx-QLj"/>
                             <constraint firstItem="XBD-bd-y17" firstAttribute="top" secondItem="IIZ-W5-GhG" secondAttribute="top" constant="36" id="JPp-7H-WQa"/>
                             <constraint firstItem="IhF-94-UW2" firstAttribute="leading" secondItem="IIZ-W5-GhG" secondAttribute="leading" constant="22" id="Leg-Pz-Yti"/>
@@ -308,12 +331,13 @@
                     </view>
                     <connections>
                         <outlet property="destLabel" destination="XBD-bd-y17" id="8qk-cw-n01"/>
+                        <outlet property="popBtn" destination="Sdj-pf-QWc" id="ksa-CD-PY0"/>
                         <outlet property="searchedAddressTV" destination="IhF-94-UW2" id="eLl-AY-5gm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZPw-7M-1yj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1878" y="125"/>
+            <point key="canvasLocation" x="1876.8115942028987" y="124.55357142857142"/>
         </scene>
         <!--Address ConfirmVC-->
         <scene sceneID="wnV-HN-WAA">
@@ -368,8 +392,8 @@
                                     <constraint firstAttribute="width" constant="34" id="j4k-yv-qdA"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmZ-9O-SkZ">
-                                <rect key="frame" x="228" y="245.5" width="39" height="19.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmZ-9O-SkZ">
+                                <rect key="frame" x="228" y="255" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -408,6 +432,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHo-lK-bg0">
                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="526"/>
+                                                <accessibility key="accessibilityConfiguration" label="예"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
@@ -443,6 +468,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59W-N6-4ix">
                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="526"/>
+                                                <accessibility key="accessibilityConfiguration" label="아니오"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
