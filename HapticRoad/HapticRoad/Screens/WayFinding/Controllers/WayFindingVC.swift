@@ -13,20 +13,17 @@ class WayFindingVC: UIViewController {
         super.viewDidLoad()
     }
     @IBAction func getPedestrianData(_ sender: UIButton) {
-        TMapAPI.shared.getPedestrianRouteAPI(startX: 126.92365493654832, startY: 37.556770374096615, endX: 126.92432158129688, endY: 37.55279861528311, startName: "%EC%B6%9C%EB%B0%9C", endName: "%EB%B3%B8%EC%82%AC") { networkResult in
+        
+        TMapAPI.shared.getPedestrianRouteAPI(startX: 126.92365493654832, startY: 37.556770374096615, endX: 126.92432158129688, endY: 37.55279861528311, startName: "성북구청", endName: "성북구청") { (networkResult) -> (Void) in
+            
             switch networkResult {
-            case .success(let res):
-                print("hello", res)
-                if let data = res as? [PedestrianData] {
-                    print(data)
+            case .success(let data):
+                if let resultData = data as? PedestrianData {
+                    print("hellllo", resultData)
                 }
-                print("success")
-            case .requestErr(let msg):
-                if let message = msg as? String {
-                    print(message)
-                }
+            case .requestErr(_):
+                print("requesetErr")
             case .pathErr:
-                print("여기야?")
                 print("pathErr")
             case .serverErr:
                 print("serverErr")

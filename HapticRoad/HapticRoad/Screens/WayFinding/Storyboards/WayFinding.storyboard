@@ -3,10 +3,22 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Bold.otf">
+            <string>Pretendard-Bold</string>
+        </array>
+        <array key="Pretendard-Medium.otf">
+            <string>Pretendard-Medium</string>
+        </array>
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Way FindingVC-->
         <scene sceneID="s0d-6b-0kx">
@@ -46,8 +58,165 @@
             </objects>
             <point key="canvasLocation" x="139" y="117"/>
         </scene>
+        <!--Way GuidanceVC-->
+        <scene sceneID="IQh-LO-pLi">
+            <objects>
+                <viewController storyboardIdentifier="WayGuidanceVC" id="k6Y-Wb-wLr" customClass="WayGuidanceVC" customModule="HapticRoad" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L6z-jl-Ddb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward" translatesAutoresizingMaskIntoConstraints="NO" id="xG1-QE-NK1">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZgP-TS-eQA">
+                                <rect key="frame" x="234" y="692" width="180" height="204"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtY-Ft-jIn">
+                                        <rect key="frame" x="20" y="24" width="140" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VE-9E-qFm">
+                                        <rect key="frame" x="20" y="38" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1WC-EI-s0f">
+                                        <rect key="frame" x="20" y="55" width="160" height="1"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="SCC-D4-SK2"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qql-G1-HUv">
+                                        <rect key="frame" x="20" y="74" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbx-rm-OtW">
+                                        <rect key="frame" x="20" y="84" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="guideDarkGray"/>
+                                <constraints>
+                                    <constraint firstItem="3VE-9E-qFm" firstAttribute="leading" secondItem="CtY-Ft-jIn" secondAttribute="leading" id="474-uX-nx5"/>
+                                    <constraint firstItem="qql-G1-HUv" firstAttribute="top" secondItem="1WC-EI-s0f" secondAttribute="bottom" constant="18" id="5kZ-aC-wk1"/>
+                                    <constraint firstAttribute="height" constant="204" id="B3g-AI-dP0"/>
+                                    <constraint firstItem="1WC-EI-s0f" firstAttribute="leading" secondItem="3VE-9E-qFm" secondAttribute="leading" id="CQg-kY-pCk"/>
+                                    <constraint firstItem="gbx-rm-OtW" firstAttribute="top" secondItem="qql-G1-HUv" secondAttribute="bottom" constant="10" id="DAT-RJ-kve"/>
+                                    <constraint firstItem="qql-G1-HUv" firstAttribute="leading" secondItem="gbx-rm-OtW" secondAttribute="leading" id="HhE-jI-Yhn"/>
+                                    <constraint firstItem="CtY-Ft-jIn" firstAttribute="leading" relation="lessThanOrEqual" secondItem="ZgP-TS-eQA" secondAttribute="leading" constant="20" id="MZ8-l8-2ae"/>
+                                    <constraint firstItem="CtY-Ft-jIn" firstAttribute="top" secondItem="ZgP-TS-eQA" secondAttribute="top" constant="24" id="R5j-ev-bzx"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="ZrA-4i-09R"/>
+                                    <constraint firstItem="3VE-9E-qFm" firstAttribute="top" secondItem="CtY-Ft-jIn" secondAttribute="bottom" constant="14" id="kW4-Jy-iD9"/>
+                                    <constraint firstAttribute="trailing" secondItem="1WC-EI-s0f" secondAttribute="trailing" id="kfh-CG-5gF"/>
+                                    <constraint firstItem="gbx-rm-OtW" firstAttribute="leading" secondItem="CtY-Ft-jIn" secondAttribute="leading" id="ppM-IR-jYb"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="CtY-Ft-jIn" secondAttribute="trailing" constant="20" id="t9e-dO-nnO"/>
+                                    <constraint firstItem="1WC-EI-s0f" firstAttribute="top" secondItem="3VE-9E-qFm" secondAttribute="bottom" constant="17" id="v50-hM-oHL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OTr-YQ-Igi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xG1-QE-NK1" firstAttribute="top" secondItem="L6z-jl-Ddb" secondAttribute="top" id="0qg-0A-gep"/>
+                            <constraint firstAttribute="bottom" secondItem="xG1-QE-NK1" secondAttribute="bottom" id="9xW-cA-Zjg"/>
+                            <constraint firstItem="xG1-QE-NK1" firstAttribute="leading" secondItem="OTr-YQ-Igi" secondAttribute="leading" id="IEe-N1-hWN"/>
+                            <constraint firstAttribute="bottom" secondItem="ZgP-TS-eQA" secondAttribute="bottom" id="aYu-gb-qa4"/>
+                            <constraint firstItem="ZgP-TS-eQA" firstAttribute="trailing" secondItem="xG1-QE-NK1" secondAttribute="trailing" id="cAg-AY-JVc"/>
+                            <constraint firstItem="OTr-YQ-Igi" firstAttribute="trailing" secondItem="xG1-QE-NK1" secondAttribute="trailing" id="dfe-Xh-DVR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="destinationFullAddressLabel" destination="3VE-9E-qFm" id="28t-S8-XNZ"/>
+                        <outlet property="destinationNameLabel" destination="CtY-Ft-jIn" id="hQn-zy-21v"/>
+                        <outlet property="detailDistanceLabel" destination="gbx-rm-OtW" id="lqN-JX-mLP"/>
+                        <outlet property="detailGuidanceLabel" destination="qql-G1-HUv" id="ulp-jr-SaQ"/>
+                        <outlet property="guidanceImageView" destination="xG1-QE-NK1" id="sck-GI-4U2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z4e-0k-gpt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="938" y="117"/>
+        </scene>
+        <!--ArrivedVC-->
+        <scene sceneID="E99-QS-qIm">
+            <objects>
+                <viewController storyboardIdentifier="ArrivedVC" id="1pJ-Pp-aYI" customClass="ArrivedVC" customModule="HapticRoad" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9lY-vN-c77">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도착했어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhi-ri-j6C">
+                                <rect key="frame" x="172" y="80" width="70" height="20"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="16"/>
+                                <color key="textColor" name="mainBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPM-bz-FMN">
+                                <rect key="frame" x="173.5" y="120" width="67" height="32"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="26"/>
+                                <color key="textColor" name="darkGray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbw-2g-LXG">
+                                <rect key="frame" x="189.5" y="170" width="35" height="17"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
+                                <color key="textColor" name="lightGray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrived" translatesAutoresizingMaskIntoConstraints="NO" id="u8c-71-6Nm">
+                                <rect key="frame" x="0.0" y="249" width="414" height="480"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="480" id="7AM-tz-I40"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ei4-Za-eNB"/>
+                        <color key="backgroundColor" name="oatmealWhite"/>
+                        <constraints>
+                            <constraint firstItem="u8c-71-6Nm" firstAttribute="leading" secondItem="Ei4-Za-eNB" secondAttribute="leading" id="ANJ-Q6-iVz"/>
+                            <constraint firstItem="zhi-ri-j6C" firstAttribute="centerX" secondItem="Ei4-Za-eNB" secondAttribute="centerX" id="Z3k-qQ-Imv"/>
+                            <constraint firstItem="zhi-ri-j6C" firstAttribute="top" secondItem="Ei4-Za-eNB" secondAttribute="top" constant="36" id="ZEo-Gf-1iR"/>
+                            <constraint firstItem="sbw-2g-LXG" firstAttribute="centerX" secondItem="Ei4-Za-eNB" secondAttribute="centerX" id="bQP-qc-qON"/>
+                            <constraint firstItem="Ei4-Za-eNB" firstAttribute="trailing" secondItem="u8c-71-6Nm" secondAttribute="trailing" id="dth-UM-HM0"/>
+                            <constraint firstItem="ZPM-bz-FMN" firstAttribute="centerX" secondItem="Ei4-Za-eNB" secondAttribute="centerX" id="eOT-ea-4qC"/>
+                            <constraint firstItem="ZPM-bz-FMN" firstAttribute="top" secondItem="zhi-ri-j6C" secondAttribute="bottom" constant="20" id="qjR-oa-idt"/>
+                            <constraint firstItem="u8c-71-6Nm" firstAttribute="top" secondItem="sbw-2g-LXG" secondAttribute="bottom" constant="62" id="uZ4-tB-93L"/>
+                            <constraint firstItem="sbw-2g-LXG" firstAttribute="top" secondItem="ZPM-bz-FMN" secondAttribute="bottom" constant="18" id="wag-vm-5d5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OdK-Ig-j73" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1725" y="117"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="arrived" width="375" height="478"/>
+        <image name="forward" width="375" height="812"/>
+        <namedColor name="darkGray">
+            <color red="0.33725490196078434" green="0.33725490196078434" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="guideDarkGray">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lightGray">
+            <color red="0.6588235294117647" green="0.6588235294117647" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mainBlue">
+            <color red="0.30980392156862746" green="0.41568627450980394" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="oatmealWhite">
+            <color red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

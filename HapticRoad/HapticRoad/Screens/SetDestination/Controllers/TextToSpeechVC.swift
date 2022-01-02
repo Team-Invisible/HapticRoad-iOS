@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 import AVFoundation
 
 class TextToSpeechVC: UIViewController {
@@ -13,12 +14,15 @@ class TextToSpeechVC: UIViewController {
     static let identifier = "TextToSpeechVC"
     var destString: String?
     let synthesizer = AVSpeechSynthesizer()
+    var searchedData: [PoiList] = []
     
     @IBOutlet var searchedAddressTV: UITableView! {
         didSet {
             searchedAddressTV.separatorStyle = .none
+            searchedAddressTV.isScrollEnabled = false
         }
     }
+    
     @IBOutlet var destLabel: UILabel! {
         didSet {
             if let dest = destString {
@@ -33,6 +37,9 @@ class TextToSpeechVC: UIViewController {
         super.viewDidLoad()
         makeDelegate()
         registerNib()
+        print("longitude: \(String(describing: Location.shared.longitude))")
+        print("latitude: \(String(describing: Location.shared.latitude))")
+        getPoiData(searchKeyword: destString ?? "", centerLon: Location.shared.longitude ?? 0, centerLat: Location.shared.latitude ?? 0)
     }
     
     func makeDelegate() {
@@ -63,7 +70,7 @@ class TextToSpeechVC: UIViewController {
 //MARK: - UITableViewDataSource
 extension TextToSpeechVC: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return searchedAddressData.count
+        return searchedData.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,10 +79,23 @@ extension TextToSpeechVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.adressTVC) as? AdressTVC else { return UITableViewCell() }
-        cell.setAppData(appData: searchedAddressData[indexPath.row])
+        cell.setAppData(appData: searchedData[indexPath.section])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: Identifiers.addressConfirmVC) as? AddressConfirmVC else { return }
+    
+        vc.addressName = searchedData[indexPath.section].name
+        vc.fullAddress = searchedData[indexPath.section].fullAddressRoad
+        vc.endX = Double(searchedData[indexPath.section].frontLon)
+        vc.endY = Double(searchedData[indexPath.section].frontLat)
+        vc.endName = destString
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
+
 //MARK: - UITableViewDelegate
 extension TextToSpeechVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -92,5 +112,31 @@ extension TextToSpeechVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 12
+    }
+}
+
+//MARK: - Network
+extension TextToSpeechVC {
+    func getPoiData(searchKeyword: String, centerLon: Double, centerLat: Double) {
+        TMapAPI.shared.getPoiAPI(searchKeyword: searchKeyword, centerLon: centerLon, centerLat: centerLat) { networkResult in
+            switch networkResult {
+            case .success(let res):
+                if let data = res as? PoiData {
+                    self.searchedData = data.list
+                    print(self.searchedData)
+                    self.searchedAddressTV.reloadData()
+                }
+            case .requestErr(let msg):
+                if let message = msg as? String {
+                    print(message)
+                }
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
 }
