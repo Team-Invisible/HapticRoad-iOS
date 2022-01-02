@@ -6,19 +6,27 @@
 //
 
 import UIKit
+import CoreLocation
 import AVFoundation
+import Speech
 
 class TextToSpeechVC: UIViewController {
     
     static let identifier = "TextToSpeechVC"
     var destString: String?
     let synthesizer = AVSpeechSynthesizer()
+    var searchedData: [PoiList] = []
+    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    private let audioEngine = AVAudioEngine()
+    let audioSession = AVAudioSession.sharedInstance()
     
     @IBOutlet var searchedAddressTV: UITableView! {
         didSet {
             searchedAddressTV.separatorStyle = .none
+            searchedAddressTV.isScrollEnabled = false
         }
     }
+    
     @IBOutlet var destLabel: UILabel! {
         didSet {
             if let dest = destString {
@@ -29,10 +37,28 @@ class TextToSpeechVC: UIViewController {
         }
     }
     
+    @IBOutlet var popBtn: UIButton! {
+        didSet {
+            popBtn.isHidden = true
+            popBtn.layer.cornerRadius = 12
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        accessibilityActivate()
         makeDelegate()
         registerNib()
+        print("longitude: \(String(describing: Location.shared.longitude))")
+        print("latitude: \(String(describing: Location.shared.latitude))")
+        getPoiData(searchKeyword: destString ?? "", centerLon: Location.shared.longitude ?? 0, centerLat: Location.shared.latitude ?? 0)
+        do {
+            try audioSession.setCategory(AVAudioSession.Category.playback)
+            try audioSession.setMode(AVAudioSession.Mode.measurement)
+            try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+        } catch {
+            print("audioSession properties weren't set because of an error.")
+        }
     }
     
     func makeDelegate() {
@@ -59,11 +85,22 @@ class TextToSpeechVC: UIViewController {
             print(error)
         }
     }
+    
+    @IBAction func popBtnDidTap(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    private func stopRecording() {
+        let inputNode = audioEngine.inputNode
+        audioEngine.stop()
+        recognitionRequest?.endAudio()
+        inputNode.removeTap(onBus: 0)
+    }
 }
 //MARK: - UITableViewDataSource
 extension TextToSpeechVC: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return searchedAddressData.count
+        return searchedData.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,10 +109,23 @@ extension TextToSpeechVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.adressTVC) as? AdressTVC else { return UITableViewCell() }
-        cell.setAppData(appData: searchedAddressData[indexPath.row])
+        cell.setAppData(appData: searchedData[indexPath.section])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: Identifiers.addressConfirmVC) as? AddressConfirmVC else { return }
+        
+        vc.addressName = searchedData[indexPath.section].name
+        vc.fullAddress = searchedData[indexPath.section].fullAddressRoad
+        vc.endX = Double(searchedData[indexPath.section].frontLon)
+        vc.endY = Double(searchedData[indexPath.section].frontLat)
+        vc.endName = destString
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
+
 //MARK: - UITableViewDelegate
 extension TextToSpeechVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -92,5 +142,41 @@ extension TextToSpeechVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 12
+    }
+}
+
+//MARK: - Network
+extension TextToSpeechVC {
+    func getPoiData(searchKeyword: String, centerLon: Double, centerLat: Double) {
+        TMapAPI.shared.getPoiAPI(searchKeyword: searchKeyword, centerLon: centerLon, centerLat: centerLat) { networkResult in
+            switch networkResult {
+            case .success(let res):
+                if let data = res as? PoiData {
+                    self.searchedData = data.list
+                    print(self.searchedData)
+                    if self.searchedData.count == 0 {
+                        print("jj")
+                        self.popBtn.isHidden = false
+                    }
+                    DispatchQueue.main.async {
+                        self.searchedAddressTV.reloadData()
+                    }
+                }
+            case .requestErr(let msg):
+                if let message = msg as? String {
+                    print(message)
+                    self.popBtn.isHidden = false
+                }
+            case .pathErr:
+                print("pathErr")
+                self.popBtn.isHidden = false
+            case .serverErr:
+                print("serverErr")
+                self.popBtn.isHidden = false
+            case .networkFail:
+                print("networkFail")
+                self.popBtn.isHidden = false
+            }
+        }
     }
 }

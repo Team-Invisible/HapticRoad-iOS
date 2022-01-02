@@ -9,5 +9,6 @@ import Foundation
 struct APIConstants {
     //MARK: Base URL
     static let tmapBaseURL = "https://apis.openapi.sk.com/tmap"
+    static let hapticRoadBaseURL = "https://asia-northeast3-invisible-hapticroad.cloudfunctions.net/api/map"
 }
   

@@ -8,61 +8,47 @@
 import Foundation
 // MARK: - PedestrianData
 struct PedestrianData: Codable {
-    let type: String
-    let geometry: Geometry
-    let properties: Properties
+    let pedestrian: [Pedestrian]
+    let totalDistance, totalTime: Int
 }
 
-// MARK: - Geometry
-struct Geometry: Codable {
-    let type: String
-    let coordinates: [[Double]]?
-}
-
-//enum Coordinate: Codable {
-//    case double(Double)
-//    case doubleArray([Double])
-//
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.singleValueContainer()
-//        if let x = try? container.decode([Double].self) {
-//            self = .doubleArray(x)
-//            return
-//        }
-//        if let x = try? container.decode(Double.self) {
-//            self = .double(x)
-//            return
-//        }
-//        throw DecodingError.typeMismatch(Coordinate.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for Coordinate"))
-//    }
-//
-//    func encode(to encoder: Encoder) throws {
-//        var container = encoder.singleValueContainer()
-//        switch self {
-//        case .double(let x):
-//            try container.encode(x)
-//        case .doubleArray(let x):
-//            try container.encode(x)
-//        }
-//    }
-//}
-
-// MARK: - Properties
-struct Properties: Codable {
+// MARK: - Pedestrian
+struct Pedestrian: Codable {
+    let type: TypeEnum
+    var coordinates: [Double]
     let index: Int
-    let pointIndex: Int?
-    let name, propertiesDescription: String
-    let direction, nearPoiName, nearPoiX, nearPoiY: String?
-    let intersectionName: String?
+    let pointIndex, lineIndex: Int?
+    let name, pedestrianDescription: String
+    let distance, time: Int?
+    let direction: String?
     let facilityType, facilityName: String
     let turnType: Int?
-    let pointType: String?
-    let lineIndex, distance, time, roadType: Int?
-    let categoryRoadType: Int?
 
     enum CodingKeys: String, CodingKey {
-        case index, pointIndex, name
-        case propertiesDescription = "description"
-        case direction, nearPoiName, nearPoiX, nearPoiY, intersectionName, facilityType, facilityName, turnType, pointType, lineIndex, distance, time, roadType, categoryRoadType
+        case type, coordinates, index, pointIndex, lineIndex, name
+        case pedestrianDescription = "description"
+        case distance, time, direction, facilityType, facilityName, turnType
     }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        type = (try? values.decode(TypeEnum.self, forKey: .type)) ?? .lineString
+        coordinates = (try? values.decode([Double].self, forKey: .coordinates)) ?? []
+        index = (try? values.decode(Int.self, forKey: .index)) ?? -1
+        pointIndex = (try? values.decode(Int.self, forKey: .pointIndex)) ?? -1
+        lineIndex = (try? values.decode(Int.self, forKey: .lineIndex)) ?? -1
+        name = (try? values.decode(String.self, forKey: .name)) ?? ""
+        pedestrianDescription = (try? values.decode(String.self, forKey: .pedestrianDescription)) ?? ""
+        distance = (try? values.decode(Int.self, forKey: .distance)) ?? -1
+        time = (try? values.decode(Int.self, forKey: .time)) ?? -1
+        direction = (try? values.decode(String.self, forKey: .direction)) ?? ""
+        facilityType = (try? values.decode(String.self, forKey: .facilityType)) ?? ""
+        facilityName = (try? values.decode(String.self, forKey: .facilityName)) ?? ""
+        turnType = (try? values.decode(Int.self, forKey: .turnType)) ?? -1
+    }
+}
+
+enum TypeEnum: String, Codable {
+    case lineString = "LineString"
+    case point = "Point"
 }

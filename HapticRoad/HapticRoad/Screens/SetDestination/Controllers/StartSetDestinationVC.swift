@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import CoreLocation
 
 class StartSetDestinationVC: UIViewController {
     
+    var locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setLocationAuth()
     }
     
     //MARK: - IBAction
@@ -22,5 +26,24 @@ class StartSetDestinationVC: UIViewController {
     
     @IBAction func stopWayFindingBtnDidTap(_ sender: UIButton) {
         print("stop")
+    }
+}
+
+//MARK: - Location
+extension StartSetDestinationVC: CLLocationManagerDelegate {
+    func setLocationAuth() {
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            print("위치 서비스 On 상태")
+            locationManager.startUpdatingLocation()
+            
+            let coor = locationManager.location?.coordinate
+            Location.shared.longitude = coor?.longitude
+            Location.shared.latitude = coor?.latitude
+        } else {
+            print("위치 서비스 Off 상태")
+        }
     }
 }

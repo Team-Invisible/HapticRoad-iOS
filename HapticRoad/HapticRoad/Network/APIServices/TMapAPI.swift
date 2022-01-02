@@ -31,20 +31,53 @@ class TMapAPI {
         }
     }
     
+    func getPoiAPI(searchKeyword: String, centerLon: Double, centerLat: Double, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        userProvider.request(.poisData(searchKeyword: searchKeyword, centerLon: centerLon, centerLat: centerLat)) { [self]
+            result in
+            switch result {
+                
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                completion(getPoisJudgeData(status: statusCode, data: data))
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
     //MARK: judgeData
     func getPedestrianRouteJudgeData(status: Int, data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(GenericResponse<PedestrianData>.self, from: data) else {
-            return .pathErr }
+        let decodedData = try? decoder.decode(GenericResponse<PedestrianData>.self, from: data)
         
         switch status {
         case 200:
-            return .success(decodedData ?? "None-Data")
+            return .success(decodedData?.data ?? "None-Data")
         case 400...500:
             return .requestErr(decodedData)
         case 500:
             return .serverErr
         default:
+            return .networkFail
+        }
+    }
+    
+    func getPoisJudgeData(status: Int, data: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+        guard let decodedData = try? decoder.decode(GenericResponse<PoiData>.self, from: data) else {
+            return .pathErr }
+        
+        switch status {
+        case 200:
+            return .success(decodedData.data ?? "None-Data")
+        case 400...500:
+            return .requestErr(decodedData)
+        case 500:
+            return .serverErr
+        default:
+            print("networkFail..")
             return .networkFail
         }
     }

@@ -31,9 +31,9 @@ class AdressTVC: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setAppData(appData: AddressData) {
-        destinationTitleLabel.text = appData.searchedTitle
-        addressLabel.text = appData.searchedAddress
+    func setAppData(appData: PoiList) {
+        destinationTitleLabel.text = appData.name
+        addressLabel.text = appData.fullAddressRoad
     }
     
     func setupLayout() {

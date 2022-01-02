@@ -19,14 +19,13 @@
 		334DF2D0277DB5F400248ED8 /* AddressData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334DF2CF277DB5F400248ED8 /* AddressData.swift */; };
 		33632035270063020062EFC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33632034270063020062EFC4 /* AppDelegate.swift */; };
 		33632037270063020062EFC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33632036270063020062EFC4 /* SceneDelegate.swift */; };
-		33632039270063020062EFC4 /* IsFirstRoadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33632038270063020062EFC4 /* IsFirstRoadVC.swift */; };
 		3363203C270063020062EFC4 /* SetDestination.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3363203A270063020062EFC4 /* SetDestination.storyboard */; };
 		3363203E270063050062EFC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3363203D270063050062EFC4 /* Assets.xcassets */; };
 		33632041270063050062EFC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3363203F270063050062EFC4 /* LaunchScreen.storyboard */; };
 		33632054270064110062EFC4 /* WayFinding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33632053270064110062EFC4 /* WayFinding.storyboard */; };
 		336320562700641C0062EFC4 /* WayFindingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336320552700641C0062EFC4 /* WayFindingVC.swift */; };
 		33632062270064920062EFC4 /* AppModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33632061270064920062EFC4 /* AppModels.swift */; };
-		336320662700649F0062EFC4 /* class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336320652700649F0062EFC4 /* class.swift */; };
+		336320662700649F0062EFC4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336320652700649F0062EFC4 /* Location.swift */; };
 		33791F17272809750087892E /* TextToSpeechVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33791F16272809750087892E /* TextToSpeechVC.swift */; };
 		33791F19272809820087892E /* SpeechToTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33791F18272809820087892E /* SpeechToTextVC.swift */; };
 		339DEEE0277B9745002749B2 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339DEEDF277B9745002749B2 /* UIColor+Additions.swift */; };
@@ -43,6 +42,11 @@
 		339DEEF6277C5499002749B2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 339DEEF5277C5499002749B2 /* Colors.xcassets */; };
 		339DEEF8277C5C10002749B2 /* StartSetDestinationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339DEEF7277C5C10002749B2 /* StartSetDestinationVC.swift */; };
 		339DEEFB277C5C2B002749B2 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339DEEFA277C5C2B002749B2 /* Identifiers.swift */; };
+		33AE3C0F277F240C005178F7 /* PoiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AE3C0E277F240C005178F7 /* PoiData.swift */; };
+		33AE3C11277F33C0005178F7 /* PedestrianService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AE3C10277F33C0005178F7 /* PedestrianService.swift */; };
+		33C0483E277F921F0074AB1B /* WayGuidanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C0483D277F921F0074AB1B /* WayGuidanceVC.swift */; };
+		33C04840277F923A0074AB1B /* ArrivedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C0483F277F923A0074AB1B /* ArrivedVC.swift */; };
+		33C04842277FAD0E0074AB1B /* AddressConfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C04841277FAD0E0074AB1B /* AddressConfirmVC.swift */; };
 		CB075C34CB3F0EF29F761F10 /* Pods_HapticRoad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D6EB6800B2BB5B1CA2FBCE /* Pods_HapticRoad.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +63,6 @@
 		33632031270063020062EFC4 /* HapticRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HapticRoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33632034270063020062EFC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33632036270063020062EFC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		33632038270063020062EFC4 /* IsFirstRoadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsFirstRoadVC.swift; sourceTree = "<group>"; };
 		3363203B270063020062EFC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SetDestination.storyboard; sourceTree = "<group>"; };
 		3363203D270063050062EFC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33632040270063050062EFC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,7 +70,7 @@
 		33632053270064110062EFC4 /* WayFinding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WayFinding.storyboard; sourceTree = "<group>"; };
 		336320552700641C0062EFC4 /* WayFindingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayFindingVC.swift; sourceTree = "<group>"; };
 		33632061270064920062EFC4 /* AppModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModels.swift; sourceTree = "<group>"; };
-		336320652700649F0062EFC4 /* class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = class.swift; sourceTree = "<group>"; };
+		336320652700649F0062EFC4 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		33791F16272809750087892E /* TextToSpeechVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeechVC.swift; sourceTree = "<group>"; };
 		33791F18272809820087892E /* SpeechToTextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechToTextVC.swift; sourceTree = "<group>"; };
 		339DEEDF277B9745002749B2 /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
@@ -84,6 +87,11 @@
 		339DEEF5277C5499002749B2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		339DEEF7277C5C10002749B2 /* StartSetDestinationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSetDestinationVC.swift; sourceTree = "<group>"; };
 		339DEEFA277C5C2B002749B2 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
+		33AE3C0E277F240C005178F7 /* PoiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiData.swift; sourceTree = "<group>"; };
+		33AE3C10277F33C0005178F7 /* PedestrianService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedestrianService.swift; sourceTree = "<group>"; };
+		33C0483D277F921F0074AB1B /* WayGuidanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayGuidanceVC.swift; sourceTree = "<group>"; };
+		33C0483F277F923A0074AB1B /* ArrivedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivedVC.swift; sourceTree = "<group>"; };
+		33C04841277FAD0E0074AB1B /* AddressConfirmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressConfirmVC.swift; sourceTree = "<group>"; };
 		653E533C555EF5AA6E1A0C4E /* Pods-HapticRoad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HapticRoad.release.xcconfig"; path = "Target Support Files/Pods-HapticRoad/Pods-HapticRoad.release.xcconfig"; sourceTree = "<group>"; };
 		83D6EB6800B2BB5B1CA2FBCE /* Pods_HapticRoad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HapticRoad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC6BE9DFE110AD9F19C612B1 /* Pods-HapticRoad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HapticRoad.debug.xcconfig"; path = "Target Support Files/Pods-HapticRoad/Pods-HapticRoad.debug.xcconfig"; sourceTree = "<group>"; };
@@ -231,6 +239,8 @@
 			isa = PBXGroup;
 			children = (
 				336320552700641C0062EFC4 /* WayFindingVC.swift */,
+				33C0483D277F921F0074AB1B /* WayGuidanceVC.swift */,
+				33C0483F277F923A0074AB1B /* ArrivedVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -238,10 +248,10 @@
 		33632051270063DF0062EFC4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				33632038270063020062EFC4 /* IsFirstRoadVC.swift */,
-				33791F16272809750087892E /* TextToSpeechVC.swift */,
-				33791F18272809820087892E /* SpeechToTextVC.swift */,
 				339DEEF7277C5C10002749B2 /* StartSetDestinationVC.swift */,
+				33791F18272809820087892E /* SpeechToTextVC.swift */,
+				33791F16272809750087892E /* TextToSpeechVC.swift */,
+				33C04841277FAD0E0074AB1B /* AddressConfirmVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -252,6 +262,7 @@
 				332BF377275BA92C00B5DA3C /* GenericResponse.swift */,
 				332BF381275C667200B5DA3C /* PedestrianData.swift */,
 				334DF2CF277DB5F400248ED8 /* AddressData.swift */,
+				33AE3C0E277F240C005178F7 /* PoiData.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -261,6 +272,7 @@
 			children = (
 				332BF37D275BA9A800B5DA3C /* TMapService.swift */,
 				332BF37F275BA9B200B5DA3C /* TMapAPI.swift */,
+				33AE3C10277F33C0005178F7 /* PedestrianService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -281,7 +293,7 @@
 		3363205E270064710062EFC4 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				336320652700649F0062EFC4 /* class.swift */,
+				336320652700649F0062EFC4 /* Location.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -454,11 +466,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33AE3C0F277F240C005178F7 /* PoiData.swift in Sources */,
+				33AE3C11277F33C0005178F7 /* PedestrianService.swift in Sources */,
 				33632062270064920062EFC4 /* AppModels.swift in Sources */,
-				33632039270063020062EFC4 /* IsFirstRoadVC.swift in Sources */,
 				339DEEE2277B979E002749B2 /* UIFont+.swift in Sources */,
 				33791F19272809820087892E /* SpeechToTextVC.swift in Sources */,
-				336320662700649F0062EFC4 /* class.swift in Sources */,
+				336320662700649F0062EFC4 /* Location.swift in Sources */,
 				339DEEE4277B9836002749B2 /* UILabel+.swift in Sources */,
 				332BF378275BA92C00B5DA3C /* GenericResponse.swift in Sources */,
 				332BF37C275BA96700B5DA3C /* NetworkResult.swift in Sources */,
@@ -470,8 +483,11 @@
 				339DEEE6277B984F002749B2 /* Notification.Name.swift in Sources */,
 				332BF37A275BA95E00B5DA3C /* APIConstants.swift in Sources */,
 				334DF2D0277DB5F400248ED8 /* AddressData.swift in Sources */,
+				33C04840277F923A0074AB1B /* ArrivedVC.swift in Sources */,
 				33632037270063020062EFC4 /* SceneDelegate.swift in Sources */,
 				332BF382275C667200B5DA3C /* PedestrianData.swift in Sources */,
+				33C0483E277F921F0074AB1B /* WayGuidanceVC.swift in Sources */,
+				33C04842277FAD0E0074AB1B /* AddressConfirmVC.swift in Sources */,
 				334DF2CD277DB09700248ED8 /* AdressTVC.swift in Sources */,
 				336320562700641C0062EFC4 /* WayFindingVC.swift in Sources */,
 				339DEEEA277B98D4002749B2 /* UserDefaults+.swift in Sources */,
@@ -636,7 +652,8 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HapticRoad/Supports/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "햅틱로드가 위치권한을 요청합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "햅틱로드가 위치권한을 요청합니다.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "햅틱로드가 마이크를 사용합니다.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "햅틱로드가 Speech를 사용합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -653,7 +670,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -673,7 +690,8 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HapticRoad/Supports/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "햅틱로드가 위치권한을 요청합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "햅틱로드가 위치권한을 요청합니다.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "햅틱로드가 마이크를 사용합니다.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "햅틱로드가 Speech를 사용합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -690,7 +708,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -19,12 +19,22 @@ class SpeechToTextVC: UIViewController {
     private var recognitionTask: SFSpeechRecognitionTask?
     //순수 소리만을 인식하는 오디오 엔진 객체
     private let audioEngine = AVAudioEngine()
+    let audioSession = AVAudioSession.sharedInstance()
     var sttText: String = ""
     var timer: Timer?
     
     @IBOutlet var guideLabel: UILabel!
     @IBOutlet var sttTextLabel: UILabel!
-    @IBOutlet var speechBtn: UIButton!
+    @IBOutlet var speechBtn: UIButton! {
+        didSet {
+            if speechBtn.isSelected {
+                speechBtn.accessibilityLabel = "말하기 중단하기"
+            }
+            else {
+                speechBtn.accessibilityLabel = "말하기"
+            }
+        }
+    }
     
     //MARK: Life Cycle
     override func viewDidLoad() {
@@ -64,15 +74,13 @@ extension SpeechToTextVC: SFSpeechRecognizerDelegate {
             recognitionTask = nil
         }
         
-        let audioSession = AVAudioSession.sharedInstance()
         do {
-            try audioSession.setCategory(AVAudioSession.Category.record)
+            try audioSession.setCategory(AVAudioSession.Category.playAndRecord)
             try audioSession.setMode(AVAudioSession.Mode.measurement)
             try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
         } catch {
             print("audioSession properties weren't set because of an error.")
         }
-        
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
         
         let inputNode = audioEngine.inputNode
@@ -88,6 +96,7 @@ extension SpeechToTextVC: SFSpeechRecognizerDelegate {
             var isFinal = false
             
             if result != nil {
+                
                 self.guideLabel.text = "듣고 있어요"
                 self.speechBtn.configuration?.background.image = UIImage(named: "hearingMotion")
                 self.sttTextLabel.text = result?.bestTranscription.formattedString
