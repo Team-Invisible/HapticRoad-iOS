@@ -68,6 +68,9 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward" translatesAutoresizingMaskIntoConstraints="NO" id="xG1-QE-NK1">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <accessibility key="accessibilityConfiguration" label="좌회전은 긴 진동, 우회전은 짧은 진동, 횡단보도는 경고 진동음이 발생합니다.">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                </accessibility>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZgP-TS-eQA">
                                 <rect key="frame" x="234" y="692" width="180" height="204"/>

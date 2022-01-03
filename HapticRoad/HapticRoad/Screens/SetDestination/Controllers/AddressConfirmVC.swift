@@ -132,6 +132,14 @@ extension AddressConfirmVC {
         }
         return crosswalkCount
     }
+    
+    /// func - 걸음 수 변환
+    func calculateWalkCount(data: PedestrianData) -> Int {
+        var walkCount: Int = 0
+        walkCount = data.totalDistance * 200 / data.totalTime
+        print(walkCount)
+        return walkCount
+    }
 }
 
 //MARK: - Network
@@ -147,6 +155,7 @@ extension AddressConfirmVC {
                         self.takenTimeLabel.text = self.convertToHourTime(time: resultData.totalTime)
                         self.distanceLabel.text = self.convertMeterToKiloMeter(distance: resultData.totalDistance)
                         self.crosswalkCountLabel.text = "횡단보도 \(String(describing: self.calculateCrosswalkCount(data: resultData.pedestrian)))"
+                        self.walkCountLabel.text = String(describing: self.calculateWalkCount(data: resultData)) + "걸음"
                     }
                 }
             case .requestErr(_):

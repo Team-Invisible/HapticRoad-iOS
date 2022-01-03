@@ -69,7 +69,6 @@ class WayGuidanceVC: UIViewController {
         setCoordinate()
         hapticInitialSetting()
         getPedestrianData(startX: Location.shared.longitude ?? -1, startY: Location.shared.latitude ?? -1, endX: endX ?? -1, endY: endY ?? -1, startName: "*", endName: endName ?? "")
-        makeCrossWalkHaptic()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -126,12 +125,12 @@ extension WayGuidanceVC {
             
             //3 비교 후 오차 범위 안에 진입했다면 인덱스 +1 & 다음 경로안내로 changing
             
-            // 1m 보다 거리 차이가 나면
+            // 5m 보다 거리 차이가 나면
             print(distance)
-            if distance > 1 {
-                print("1m 보다 거리 차이가 나")
+            if distance > 2 {
+                print("2m 보다 거리 차이가 나")
             }
-            // 1m 보다 거리 차이가 안나면 == 오차범위 충족
+            // 2m 보다 거리 차이가 안나면 == 오차범위 충족
             else {
                 print("제대로 가고있어")
                 currentIdx += 1
@@ -157,7 +156,6 @@ extension WayGuidanceVC {
     func matchTurntype(arrayIndex: Int) {
         switch pedestrianArray[arrayIndex].turnType {
         case 11:
-            makeStraightHaptic()
             guidanceDirection = .straight
             guidanceImageView.image = UIImage(named: "forward")
             print("forward")
@@ -177,7 +175,6 @@ extension WayGuidanceVC {
             guidanceImageView.image = UIImage(named: "crosswalk")
             print("crosswalk")
         default:
-            makeStraightHaptic()
             guidanceDirection = .straight
             guidanceImageView.image = UIImage(named: "forward")
             print("forward")
@@ -261,16 +258,58 @@ extension WayGuidanceVC {
     
     func makeStraightHaptic() {
         guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+        let short1 = CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: 0)
+        let short2 = CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: 0.2)
+        let short3 = CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: 0.4)
+        let long1 = CHHapticEvent(eventType: .hapticContinuous, parameters: [], relativeTime: 0.6, duration: 0.5)
+        let long2 = CHHapticEvent(eventType: .hapticContinuous, parameters: [], relativeTime: 1.2, duration: 0.5)
+        let long3 = CHHapticEvent(eventType: .hapticContinuous, parameters: [], relativeTime: 1.8, duration: 0.5)
+        let short4 = CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: 2.4)
+        let short5 = CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: 2.6)
+        let short6 = CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: 2.8)
+        
+        do {
+            let pattern = try CHHapticPattern(events: [short1, short2, short3, long1, long2, long3, short4, short5, short6], parameters: [])
+            let player = try engine?.makePlayer(with: pattern)
+            try player?.start(atTime: 0)
+        } catch {
+            print("Failed to play pattern: \(error.localizedDescription).")
+        }
         
     }
     
     func makeLeftHaptic() {
         guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+        let long1 = CHHapticEvent(eventType: .hapticContinuous, parameters: [], relativeTime: 1.8, duration: 1.0)
+        let long2 = CHHapticEvent(eventType: .hapticContinuous, parameters: [], relativeTime: 1.8, duration: 1.0)
+        let long3 = CHHapticEvent(eventType: .hapticContinuous, parameters: [], relativeTime: 1.8, duration: 1.0)
+        
+        do {
+            let pattern = try CHHapticPattern(events: [long1, long2, long3], parameters: [])
+            let player = try engine?.makePlayer(with: pattern)
+            try player?.start(atTime: 0)
+        } catch {
+            print("Failed to play pattern: \(error.localizedDescription).")
+        }
         
     }
     
     func makeRightHaptic() {
         guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+        let short1 = CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: 0)
+        let short2 = CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: 0.2)
+        let short3 = CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: 0.4)
+        let short4 = CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: 2.4)
+        let short5 = CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: 2.6)
+        let short6 = CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: 2.8)
+        
+        do {
+            let pattern = try CHHapticPattern(events: [short1, short2, short3, short4, short5, short6], parameters: [])
+            let player = try engine?.makePlayer(with: pattern)
+            try player?.start(atTime: 0)
+        } catch {
+            print("Failed to play pattern: \(error.localizedDescription).")
+        }
         
     }
     
